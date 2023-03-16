@@ -1,5 +1,5 @@
 import { sidebar } from "./sidebar.js";
-import { api_key, imageBaseURL, fetchDataFromServer } from "./api.js";
+import { api_key, imageBaseURL, fetchDataFromServer } from "./Api.js";
 
 
 const pageContent = document.querySelector("[page-content]");
@@ -76,4 +76,5 @@ const heroBanner = function ({ results: movieList }) {
 
     let controlItemIndex = 0;
 
-    for (const [index, movie] of movieList.entries());
+    for (const [index, movie] of movieList.entries()) ;
+}

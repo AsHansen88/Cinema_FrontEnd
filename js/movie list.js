@@ -1,4 +1,4 @@
-import { api_key, fetchDataFromServer } from "./api.js";
+import { api_key, fetchDataFromServer } from "./Api.js";
 import { sidebar } from "./sidebar.js";
 
 
@@ -17,4 +17,4 @@ sidebar();
 let currentPage = 1;
 let totalPages = 0;
 
-fetchDataFromServer(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&sort_by=popularity.desc&include_adult=false&page=${currentPage}&${urlParam}`, function ({ results: movieList, total_pages }) {
+fetchDataFromServer(`https://api.themoviedb.org/3/discover/movie?api_key=${api_key}&sort_by=popularity.desc&include_adult=false&page=${currentPage}&${urlParam}`, function ({ results: movieList, total_pages })

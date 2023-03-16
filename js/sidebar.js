@@ -1,4 +1,4 @@
-import { api_key, fetchDataFromServer } from "./api.js";
+import { api_key, fetchDataFromServer } from "./Api.js";
 
 
 export function sidebar() {
@@ -9,8 +9,8 @@ export function sidebar() {
      */
     const genreList = {};
 
-    fetchDataFromServer(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`, function ({ genres }) {
-        for (const { id, name } of genres) {
+    fetchDataFromServer(`https://api.themoviedb.org/3/genre/movie/list?api_key=${api_key}`, function ({genres}) {
+        for (const {id, name} of genres) {
             genreList[id] = name;
         }
 
@@ -20,3 +20,4 @@ export function sidebar() {
 
     const sidebarInner = document.createElement("div");
     sidebarInner.classList.add("sidebar-inner");
+}
