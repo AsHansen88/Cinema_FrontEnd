@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kino Login Page</title>
+    <link rel ="stylesheet"href="css/Login.css">
+</head>
+<body>
+    <div class="container">
+        <p>Enter login below</p>
+        <input type="text"placeholder="text">
+        <button>Generate</button>
+
+        <form method="post" action="http://localhost:8080/userLogin" id="formUser">
+            <label for="inpUsername"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="name" required id="inpUsername">
+
+            <label for="inpPassword"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required id="inpPassword">
+
+            <button type="submit">Login</button>
+
+        </form>
+    </div>
+    <script src="js/userLogin.js"></script>
+</body>
+</html>

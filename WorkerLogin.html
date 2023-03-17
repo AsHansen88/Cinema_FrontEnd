@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WorkerLogin</title>
+    <link rel ="stylesheet"href="css/Login.css">
+
+</head>
+
+<body>
+<div class="container">
+    <p>Enter login below</p>
+    <input type="text"placeholder="text">
+    <button>Generate</button>
+
+    <form method="post" action="http://localhost:8080/WorkerLogin" id="formWorker">
+        <label for="inpUsername"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required id="inpUsername">
+
+        <label for="inpPassword"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required id="inpPassword">
+
+        <button type="submit">Login</button>
+
+    </form>
+</div>
+<script src="js/workerLogin.js"></script>
+</body>
+</html>
