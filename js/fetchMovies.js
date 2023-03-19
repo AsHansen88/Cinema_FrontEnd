@@ -1,29 +1,30 @@
-/*console.log("Vi er i fetchMovies fra Database")
+console.log("Vi er i fetchMovies fra Database")
 const urlMovies = "http://localhost:8080/Movies"
 const urlPostMovies = "http://localhost:8080/cinema_database"
+const ddMovies = document.getElementById("ddMovies")
+const pbChooseMovie = document.getElementById("pbChooseMovie")
 
 function fetchAny(url) {
     console.log(url)
     return fetch(url).then((response) =>response.json())
-
 }
 
-let firstmovies = []
+let movies = [];
 
 async function actionFetchMovies(){
-    firstmovies = await fetchAny(urlMovies);
-    console.log(firstmovies)
-    firstmovies.forEach(fillMoviesDropdown)
+    movies = await fetchAny(urlMovies);
+    console.log(movies);
+    movies.forEach(fillMoviesDropdown);
 }
 
 function fillMoviesDropdown(movie){
-const el = document.createElement("option")
-el.textContent = movie.name
-el.value = movie.name
-ddMovies.appendChild(el)
-
+    const el = document.createElement("option")
+    el.textContent = movie.name;
+    el.value = movie.movieId;
+    ddMovies.appendChild(el);
 }
 
+let body = {};
 const postMovieRequest = {
     method: "POST",
     headers: {
@@ -31,6 +32,7 @@ const postMovieRequest = {
     },
     body: body
 }
+
 
 function postMovie(movie){
     body = JSON.stringify(movie)
@@ -41,19 +43,19 @@ function postMovie(movie){
 
 function actionPostAllMovies(bth){
     console.log("Post all movies")
-    firstmovies.forEach(postMovie)
+    movies.forEach(postMovie)
 }
 
-
+//let selectedMovie = ddMovies.selectedIndex; // TODO make a variable that has the movieId of currently selected Movie
+//let selectedMovieId = ddMovies[selectedMovie].movieId;
 const pbFetchMovies = document.getElementById("pbFetchMovies")
 const pbPostMovies = document.getElementById("pbPostMovies")
-pbFetchMovies.addEventListener('click', actionFetchMovies)
-pbPostMovies.addEventListener('Click', actionPostAllMovies)
-
-*/
-import { imageBaseURL } from "./api.js";
 
 
+
+// import { imageBaseURL } from "./api.js";
+
+/*
 export function createMovieCard(movie) {
 
     const {
@@ -89,3 +91,7 @@ export function createMovieCard(movie) {
 
     return card;
 }
+ */
+
+actionFetchMovies();
+pbChooseMovie.addEventListener("click", actionFetchMovies)

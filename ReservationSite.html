@@ -8,7 +8,7 @@
 <body>
     <header>
         <h1>Kino Cinema</h1>
-        <img src="placeholder logo link">
+        <img>
         <div class="navbar-links">
             <p>Link 1</p>
             <p>Link 2</p>
@@ -18,17 +18,24 @@
     <hr>
     <h1>Order your movie below</h1>
     <br>
+    <select id="ddMovies"></select>
+
+    <select id="ddShowtimes"></select>
+
+    <!--
     <Table>
         <tr>
             <td>Name</td>
             <td>Length</td>
             <td>Rating</td>
-            <td>Age Restriction</td>
             <td>Genre</td>
             <td>Poster</td>
         </tr>
     </Table>
+    -->
+    <button id="pbChooseMovie">Confirm Reservation</button>
 
-
+    <script src="js/fetchMovies.js"></script>
+    <script src="js/fetchShowtimes.js"></script>
 </body>
 </html>
