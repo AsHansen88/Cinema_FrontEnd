@@ -2,28 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content ="IE=Edge">
+    <meta name="viewport" content="Width=device.Width, Initial-scale=1.0">
+
     <title>WorkerLogin</title>
-    <link rel ="stylesheet"href="css/Login.css">
+    <link rel="stylesheet" href="css/Login.css"> </link>
 
-</head>
+    </head>
+    <body>
+    <div class="container">
+     <form>
+         <h2>WorkerLogin</h2>
+         <input class ="Input" type ="text" id="username" placeholder="Choose Username">
+         <input class ="input" type ="password" id="password" placeholder="Choose password">
+         <button class = "btn" type ="button" onclick="getInfo()" >Login</button>
+     </form>
 
-<body>
-<div class="container">
-    <p>Enter login below</p>
-    <input type="text"placeholder="text">
-    <button>Generate</button>
+        <form>
+            <h2>RegisterNewWorker</h2>
+            <input class ="Input" type ="text" id="NewUsername" placeholder="Choose Username">
+            <input class ="input" type ="password" id="NewPassword" placeholder="Choose password">
+            <button class = "btn" type ="button" onclick="registerNewWorker()" >Register</button>
+        </form>
 
-    <form method="post" action="http://localhost:8080/WorkerLogin" id="formWorker">
-        <label for="inpUsername"><b>Username</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required id="inpUsername">
+    </div>
+    </body>
+    <script src="js/workerLogin.js"></script>
+    </html>
 
-        <label for="inpPassword"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required id="inpPassword">
-
-        <button type="submit">Login</button>
-
-    </form>
-</div>
-<script src="js/workerLogin.js"></script>
-</body>
-</html>
