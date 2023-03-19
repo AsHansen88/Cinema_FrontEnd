@@ -24,6 +24,10 @@ function getInfo(){
             const homeUrl = "ReservationSite.html";
             window.location.replace(homeUrl);
             return
+
+
+             //man kan ikke gøre det her indeni en submit button
+            //window.location.href = homeUrl;
         }
     }
 
