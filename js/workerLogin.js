@@ -21,7 +21,8 @@ function getInfo(){
         if (username == objPeople[i].username && password == objPeople[i].password){
             console.log("Whuhoo you logged in")
             //Hvis koden passer bliver du redirected til google.com
-            window.location.href = 'http://www.google.com';
+            const homeUrl = "ReservationSite.html";
+            window.location.replace(homeUrl);
             return
         }
     }
@@ -38,7 +39,7 @@ function registerNewWorker(){
     }
 
     for(i = 0; i < objPeople.length; i++) {
-        if(RegisterUsername == objPeople[i]){
+        if(RegisterUsername == objPeople[i].username){
 
             alert("That name is in use")
             return
