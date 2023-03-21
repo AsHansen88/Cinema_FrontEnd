@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>Showtime creation</h1>
+  <br>
+  <div class="postFormContainer">
+      <!-- Hibernate: insert into showtime (movie_id, movie_theater_id, timeslot, showtime_id) values (?, ?, ?, ?) -->
+    <form id="formShowtime" method="post" action="http://localhost:8080/postShowtime">
+        <label for="ddMovies"><bold>Select Movie:</bold></label>
+        <select id="ddMovies" name="movieId"></select>
+
+        <label for="ddMovieTheater">Select Theater</label>
+        <select id="ddMovieTheater" name="movieTheaterId">
+            <option value=1>1</option>
+            <option value=2>2</option>
+        </select>
+
+        <label for="inpTimeslot"><bold>Create Timeslot</bold></label>
+        <input type="datetime-local" id="inpTimeslot" name="timeslot">
+
+
+
+
+        <button type="submit">Create Timeslot</button>
+    </form>
+  </div>
+
+
+<script src="js/fetchMovies.js"></script>
+<script src="js/postShowtime.js"></script>
+</body>
+</html>
