@@ -24,6 +24,7 @@ function fillMoviesDropdown(movie){
     ddMovies.appendChild(el);
 }
 
+
 let body = {};
 const postMovieRequest = {
     method: "POST",

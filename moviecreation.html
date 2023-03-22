@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movies</title>
+</head>
+<body>
+<header>
+<h1>Add or Delete Movies</h1>
+</header>
+<form action ="Add" method="post">
+
+        <h3>Add Movie</h3>
+        <label>Movie ID</label>
+        <form id="formmovieAdd" method="post" action="http://localhost:8080/postShowtime">
+        <label for="ddMovies"><bold>Select Movie:</bold></label>
+        <select id="ddMovies"></select>
+        <br><br>
+        <br><br>
+        <button type ="Add">Add</button>
+
+</form>
+
+
+<form action="/delete" method="POST">
+        <h3>Delete a movie</h3>
+        <label>Movie ID</label>
+        <form id="formDelete" method="post" action="http://localhost:8080/postmovies">
+         <label for="ddMovies"><bold>Select Movie:</bold></label>
+         <select id="ddMoviesDelete"></select>
+        <br><br>
+        <br><br>
+        <button type ="Delete">Delete</button>
+        <br><br>
+</form>
+</form>
+<script src="js/fetchMovies.js"></script>
+
+</body>
+</html>

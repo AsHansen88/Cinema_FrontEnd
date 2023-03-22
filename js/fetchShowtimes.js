@@ -1,16 +1,10 @@
 console.log("Location: fetchShowTimes.js");
 
-const tblShowtimes = document.getElementById("tblShowtimes");
-const urlShowtimes = "http://localhost:8080/movie/showtime/";
-const tblMovies = document.getElementById("tblMovies");
+// const tblMovies = document.getElementById("tblMovies");
+// const tblShowtimes = document.getElementById("tblShowtimes");
+const urlShowtimes = "http://localhost:8080/movie/showtimes/";
 const ddShowtimes = document.getElementById("ddShowtimes");
 
-
-
-function fetchAny(url) {
-    console.log(url);
-    return fetch(url).then((response) => response.json);
-}
 
 let showtimeList = [];
 
@@ -20,22 +14,22 @@ async function actionGetShowtimesByMovieId() {
     console.log(ddIndex);
     const linje = ddMovies[ddIndex];
     console.log(linje);
-    const movieId = linje.movieId;
-    console.log(movieId)
+    const ddMovieId = linje.value;
+    console.log(ddMovieId);
 
-    showtimeList = fetchAny(urlShowtimes + movieId); // TODO fix the backend make it work
-    console.log(showtimeList);
+    showtimeList = await fetchAny(urlShowtimes + ddMovieId); // TODO fix the backend make it work
+    console.log(showtimeList)
     showtimeList.forEach(fillDropdownShowtimes);
 }
 
 function fillDropdownShowtimes(showtime) {
+    console.log("linje 32")
     const el = document.createElement("option");
     el.textContent = showtime.timeslot;
+    console.log("linje 34")
+    console.log(showtime)
     el.value = showtime.showtimeId;
     ddShowtimes.appendChild(el);
 }
 
-
-actionGetShowtimesByMovieId();
 ddMovies.addEventListener("change", actionGetShowtimesByMovieId);
-
