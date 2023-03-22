@@ -14,7 +14,7 @@ async function actionGetShowtimesByMovieId() {
     console.log(ddIndex);
     const linje = ddMovies[ddIndex];
     console.log(linje);
-    const ddMovieId = linje.value;
+    const ddMovieId = linje.movieId;
     console.log(ddMovieId);
 
     showtimeList = await fetchAny(urlShowtimes + ddMovieId); // TODO fix the backend make it work

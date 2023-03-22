@@ -15,12 +15,17 @@ async function actionFetchMovies(){
     movies = await fetchAny(urlMovies);
     console.log(movies);
     movies.forEach(fillMoviesDropdown);
+    console.log(ddMovies);
 }
 
 function fillMoviesDropdown(movie){
-    const el = document.createElement("option")
+    const el = document.createElement("option");
     el.textContent = movie.name;
     el.value = movie.movieId;
+    el.movieId = movie.movieId;
+    el.movie = movie;
+    el.movieLength = movie.length;
+    // todo check if movie element is saved in showtime post
     ddMovies.appendChild(el);
 }
 

@@ -41,9 +41,12 @@ async function handleShowtimeFormSubmit(event) {
 async function postFormData(url, formData) {
     const plainFormData = Object.fromEntries(formData.entries())
     const ddIndex = ddMovies.selectedIndex;
+    plainFormData.movieTheater = {};
+    plainFormData.movieTheater.movieTheaterId = 1;
     console.log(ddIndex);
     const selectedMovie = ddMovies[ddIndex];
     console.log(selectedMovie);
+    plainFormData.movie = selectedMovie.movie;
     console.log(plainFormData);
     const formDataJsonString = JSON.stringify(plainFormData)
     const fetchOptions = {
