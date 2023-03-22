@@ -8,18 +8,16 @@
 <header>
 <h1>Add or Delete Movies</h1>
 </header>
-<form action ="Add" method="post">
+
 
         <h3>Add Movie</h3>
         <label>Movie ID</label>
-        <form id="formmovieAdd" method="post" action="http://localhost:8080/postShowtime">
         <label for="ddMovies"><bold>Select Movie:</bold></label>
         <select id="ddMovies"></select>
         <br><br>
         <br><br>
         <button id="pbCreateTable">CreateTable</button>
 
-</form>
 
 
 <form action="/delete" method="POST">
@@ -35,6 +33,8 @@
 </form>
 </form>
 <script src="js/fetchMovies.js"></script>
+<script src="js/createtable.js"></script>
+<script src="js/postMovieTable.js"></script>
 
 </body>
 </html>

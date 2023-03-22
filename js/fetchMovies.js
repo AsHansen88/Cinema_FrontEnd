@@ -100,4 +100,8 @@ export function createMovieCard(movie) {
  */
 
 actionFetchMovies();
-pbChooseMovie.addEventListener("click", actionFetchMovies)
+
+//const pbChooseMovie = document.getElementById("pbFetchKommuner")
+const pbPostddMovies = document.getElementById("pbPostKommuner")
+//pbChooseMovie.addEventListener("click", actionFetchMovies)
+//pbPostddMovies.addEventListener('click', actionPostAllMovies)
