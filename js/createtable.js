@@ -10,7 +10,7 @@ function createTable(Movie) {
     let cellCount = 0
     let rowCount = TblMovies.rows.length
     let row = TblMovies.insertRow(rowCount)
-    row.id = Movie.navn;
+    row.id = Movie.name;
 
     let cell = row.insertCell(cellCount++)
     cell.innerHTML = Movie.ageRestriction
@@ -23,17 +23,17 @@ function createTable(Movie) {
 
 /*
     cell = row.insertCell(cellCount++)
-    cell.innerHTML = Movie.region.navn
+    cell.innerHTML = Movie.region.name
 */
     cell = row.insertCell(cellCount++)
     let inpHrefPhoto = document.createElement("input")
     inpHrefPhoto.type = "text"
-    inpHrefPhoto.setAttribute("value", Movie.hrefPhoto)
+    inpHrefPhoto.setAttribute("value", Movie.photo)
     cell.appendChild(inpHrefPhoto)
 
     cell = row.insertCell(cellCount++)
     let img = document.createElement("img")
-    img.setAttribute("src", Movie.hrefPhoto)
+    img.setAttribute("src", Movie.photo)
     img.setAttribute("alt", "hej")
     img.setAttribute("width", 150)
     img.setAttribute("height", 150)
@@ -45,8 +45,8 @@ function createTable(Movie) {
     pbUpdate.textContent = "Opdater"
     pbUpdate.className = "buttonupdate"
     pbUpdate.addEventListener('click', function () {
-        Movie.hrefPhoto = inpHrefPhoto.value;
-        updateKommune(Movie)
+        Movie.photo = inpHrefPhoto.value;
+        updateMovie(Movie)
     })
     cell.appendChild(pbUpdate)
 
@@ -56,26 +56,26 @@ function createTable(Movie) {
     pbDelete.textContent = "Delete"
     pbDelete.className = "buttondelete"
     pbDelete.addEventListener('click', function () {
-        const rowdel = document.getElementById(Movie.navn)
+        const rowdel = document.getElementById(Movie.name)
         rowdel.remove();
-        deleteKommune(Movie)
+        deleteMovie(Movie)
     })
     cell.appendChild(pbDelete)
 
 }
 
-async function deleteKommune(Movie) {
+async function deleteMovie(Movie) {
     console.log("slet kommune" + Movie.name)
 }
 
-async function updateKommune(Movie) {
+async function updateMovie(Movie) {
     console.log(Movie.hrefPhoto)
     console.log(Movie)
-    const response = await restUpdateKommune(Movie)
+    const response = await restUpdateMovie(Movie)
     console.log(response)
 }
 
-async function restUpdateKommune(Movie) {
+async function restUpdateMovie(Movie) {
     const url = "http://localhost:8080/Movies" + Movie.kode;
     const fetchOptions = {
         method: "PUT",

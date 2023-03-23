@@ -16,28 +16,21 @@
         <select id="ddMovies"></select>
         <br><br>
         <br><br>
-        <button id="pbCreateTable">CreateTable</button>
+        <button id="pbCreateTable">Add movie</button>
 
 <table class="table" id="TblMovies">
     <tr style="color:white; background-color: black">
+
+        <th>ageRestriction</th>
         <th>name</th>
-    </tr>
+        <th>categories</th>
+        <th>photo</th>
+        <th>Edit</th>
+        <th>delete</th>
+
 </table>
 
 
-
-
-<form action="/delete" method="POST">
-        <h3>Delete a movie</h3>
-        <label>Movie ID</label>
-        <form id="formDelete" method="post" action="http://localhost:8080/postmovies">
-         <label for="ddMovies"><bold>Select Movie:</bold></label>
-         <select id="ddMoviesDelete"></select>
-        <br><br>
-        <br><br>
-        <button type ="Delete">Delete</button>
-        <br><br>
-</form>
 </form>
 <script src="js/fetchMovies.js"></script>
 <script src="js/createtable.js"></script>
