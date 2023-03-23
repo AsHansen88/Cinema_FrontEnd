@@ -7,13 +7,28 @@
 </head>
 <body>
     <div class="container">
-        <h2>Enter login below</h2>
+        <h2>Create New User</h2>
         <hr>
         <br>
         <br>
+        <form id="formUserCreation" method="post" action="http://localhost:8080/createUser">
+            <label for="inpNewUsername"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" id="inpNewUsername" name="name">
+
+            <label for="inpNewPassword"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" id="inpNewPassword" name="password">
+
+            <button type="submit">Create User</button>
+
+        </form>
         <!-- <input type="text"placeholder="Placeholder Input"> -->
         <!--<button>Generate</button> -->
 
+        <br>
+        <h2>User Login</h2>
+        <hr>
+        <br>
+        <br>
         <form id="formUser" method="post" action="http://localhost:8080/userLogin" >
             <label for="inpUsername"><b>Username</b></label>
             <input type="text" placeholder="Enter Username" name="name" required id="inpUsername">
@@ -24,7 +39,11 @@
             <button type="submit">Login</button>
 
         </form>
+
+
+
     </div>
     <script src="js/userLogin.js"></script>
+    <script src="js/createUser.js"></script>
 </body>
 </html>
