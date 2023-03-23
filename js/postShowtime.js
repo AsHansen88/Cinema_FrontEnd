@@ -41,12 +41,12 @@ async function handleShowtimeFormSubmit(event) {
 async function postFormData(url, formData) {
     const plainFormData = Object.fromEntries(formData.entries())
     const ddIndex = ddMovies.selectedIndex;
-    plainFormData.movieTheater = {};
-    plainFormData.movieTheater.movieTheaterId = 1;
+    // plainFormData.movieTheater = {};
+    // plainFormData.movieTheater.movieTheaterId = 1;
     console.log(ddIndex);
     const selectedMovie = ddMovies[ddIndex];
     console.log(selectedMovie);
-    plainFormData.movie = selectedMovie.movie;
+    plainFormData.movieId = selectedMovie.movie; //THIS MIGHT MAKE IT WORK IF MESSING WITH FETCHMOVIES DONT WORK
     console.log(plainFormData);
     const formDataJsonString = JSON.stringify(plainFormData)
     const fetchOptions = {

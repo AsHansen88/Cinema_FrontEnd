@@ -9,30 +9,30 @@ function createFormEventListener() {
     formUser = document.getElementById("formUser");
     console.log("hej 27")
     console.log(formUser)
-    formUser.addEventListener("submit", handleFormSubmit);
+    formUser.addEventListener("submit", handleUserLoginFormSubmit);
 }
 
-async function handleFormSubmit(event) {
+async function handleUserLoginFormSubmit(event) {
     //Vi handler submit her, i stedet for default html behaviour
     event.preventDefault();
     const form = event.currentTarget;
     const url = form.action;
     console.log(form)
     console.log(url)
-    console.log(form === formUser)
+    // console.log(form === formUser)  <--- VOLDER PROBLEMER MED CROSS ORIGIN, EFTERLADT SOM ADVARSEL
     try {
         const formData = new FormData(form);
         console.log(formData);
-        const responseData = await postFormData(url, formData)
+        const responseData = await postFormData(url, formData);
+        console.log("ResponseData:");
+        console.log(responseData);
 
-        // når vi har oprettet sognet
-        alert(formData.get('user') + ' er oprettet');
-
-        // TODO Hvad er funktionaliuteten her?
-        const homeUrl = "Login.html";
-        window.location.replace(homeUrl); //man kan ikke gøre det her indeni en submit button
+        if (responseData.ok) {
+            const homeUrl = "Index.html";
+            window.location.replace(homeUrl);
+        }
+        //man kan ikke gøre det her indeni en submit button
         //window.location.href = homeUrl;
-
     } catch (error) {
         alert(error.message)
         console.log(error)
@@ -54,9 +54,11 @@ async function postFormData(url, formData) {
     const response = await fetch(url, fetchOptions)
 
     if (!response.ok) {
+        console.log("Error message:")
         const errorMessage = await response.text()
         throw new Error(errorMessage)
     }
-    return response.json();
+    // for this Userlogin post, the usual "return response.json()" is not needed
+    return response;
 }
 

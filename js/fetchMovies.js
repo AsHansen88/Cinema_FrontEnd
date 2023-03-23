@@ -27,6 +27,7 @@ function fillMoviesDropdown(movie){
     el.movieLength = movie.length;
     // todo check if movie element is saved in showtime post
     ddMovies.appendChild(el);
+    console.log(ddMovies);
 }
 
 
