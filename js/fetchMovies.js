@@ -9,12 +9,12 @@ function fetchAny(url) {
     return fetch(url).then((response) =>response.json())
 }
 
-let movies = [];
+let lstmovies = [];
 
 async function actionFetchMovies(){
-    movies = await fetchAny(urlMovies);
-    console.log(movies);
-    movies.forEach(fillMoviesDropdown);
+    lstmovies = await fetchAny(urlMovies);
+    console.log(lstmovies);
+    lstmovies.forEach(fillMoviesDropdown);
     console.log(ddMovies);
 }
 

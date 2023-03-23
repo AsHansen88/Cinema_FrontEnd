@@ -4,8 +4,8 @@ const pbCreateTable = document.getElementById("pbCreateTable")
 const TblMovies = document.getElementById("TblMovies")
 
 function createTable(Movie) {
-    console.log(Movie.navn)
-    if (!Movie.kode) return;
+    console.log(Movie.name)
+    if (!Movie.ageRestriction) return;
 
     let cellCount = 0
     let rowCount = TblMovies.rows.length
@@ -13,17 +13,18 @@ function createTable(Movie) {
     row.id = Movie.navn;
 
     let cell = row.insertCell(cellCount++)
-    cell.innerHTML = Movie.kode
+    cell.innerHTML = Movie.ageRestriction
 
     cell = row.insertCell(cellCount++)
     let atag = document.createElement("a")
     atag.setAttribute("href", Movie.href)
-    atag.innerText = Movie.navn
+    atag.innerText = Movie.name
     cell.appendChild(atag)
 
+/*
     cell = row.insertCell(cellCount++)
     cell.innerHTML = Movie.region.navn
-
+*/
     cell = row.insertCell(cellCount++)
     let inpHrefPhoto = document.createElement("input")
     inpHrefPhoto.type = "text"
@@ -64,7 +65,7 @@ function createTable(Movie) {
 }
 
 async function deleteKommune(Movie) {
-    console.log("slet kommune" + Movie.navn)
+    console.log("slet kommune" + Movie.name)
 }
 
 async function updateKommune(Movie) {
@@ -97,7 +98,8 @@ async function restUpdateKommune(Movie) {
 
 
 function actionCreateTable() {
-    lstMovies.forEach(createTable)
+    lstmovies.forEach(createTable)
 }
 
-//pbCreateTable.addEventListener('click', actionCreateTable)
+pbCreateTable.addEventListener('click', actionCreateTable)
+
