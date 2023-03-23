@@ -7,7 +7,8 @@ let formMovie;
 
 function createShowtimeFormEventListener(){
     formMovie = document.getElementById("formMovie");
-    formMovie.addEventListener("pbCreateTable", handleFormSubmit);
+    //formMovie.addEventListener("submit", handleFormSubmit);
+
 }
 
 
@@ -28,7 +29,7 @@ async function handleFormSubmit(event) {
         // Når vi har oprettet movie
         alert(formData.get('movie') + ' er oprettet');
 
-        const homeUrl = "Login.html";
+        const homeUrl = "moviecreation.html";
         window.location.replace(homeUrl); // Man kan ikke gøre det her indeni en submit button
         //window.location.href = homeUrl;
 
