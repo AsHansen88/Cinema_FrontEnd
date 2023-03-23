@@ -34,7 +34,7 @@ function createTable(Movie) {
     cell = row.insertCell(cellCount++)
     let img = document.createElement("img")
     img.setAttribute("src", Movie.photo)
-    img.setAttribute("alt", "hej")
+    img.setAttribute("alt", "Billede")
     img.setAttribute("width", 150)
     img.setAttribute("height", 150)
     cell.appendChild(img)
@@ -54,7 +54,7 @@ function createTable(Movie) {
     cell = row.insertCell(cellCount++)
     let pbDelete = document.createElement("button")
     pbDelete.textContent = "Delete"
-    pbDelete.className = "buttondelete"
+    pbDelete.name = "buttondelete"
     pbDelete.addEventListener('click', function () {
         const rowdel = document.getElementById(Movie.name)
         rowdel.remove();
@@ -65,11 +65,11 @@ function createTable(Movie) {
 }
 
 async function deleteMovie(Movie) {
-    console.log("slet kommune" + Movie.name)
+    console.log("slet movie" + Movie.name)
 }
 
 async function updateMovie(Movie) {
-    console.log(Movie.hrefPhoto)
+    console.log(Movie.photo)
     console.log(Movie)
     const response = await restUpdateMovie(Movie)
     console.log(response)
