@@ -52,7 +52,7 @@ async function postFormData(url, formData) {
     }
 
     const response = await fetch(url, fetchOptions)
-
+    console.log(response)
     if (!response.ok) {
         console.log("Error message:")
         const errorMessage = await response.text()
