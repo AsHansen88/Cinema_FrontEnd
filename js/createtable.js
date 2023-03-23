@@ -17,13 +17,13 @@ function createTable(Movie) {
 
     cell = row.insertCell(cellCount++)
     let atag = document.createElement("a")
-    atag.setAttribute("href", Movie.href)
+    atag.setAttribute("href", Movie.length)
     atag.innerText = Movie.name
     cell.appendChild(atag)
 
 /*
     cell = row.insertCell(cellCount++)
-    cell.innerHTML = Movie.region.name
+    cell.innerHTML = Movie.region.navn
 */
     cell = row.insertCell(cellCount++)
     let inpHrefPhoto = document.createElement("input")
@@ -42,8 +42,8 @@ function createTable(Movie) {
     //Update knap, sender Movie til PUT
     cell = row.insertCell(cellCount++)
     let pbUpdate = document.createElement("button")
-    pbUpdate.textContent = "Opdater"
-    pbUpdate.className = "buttonupdate"
+    pbUpdate.textContent = "Edit"
+    pbUpdate.name = "buttonupdate"
     pbUpdate.addEventListener('click', function () {
         Movie.photo = inpHrefPhoto.value;
         updateMovie(Movie)
@@ -76,7 +76,7 @@ async function updateMovie(Movie) {
 }
 
 async function restUpdateMovie(Movie) {
-    const url = "http://localhost:8080/Movies" + Movie.kode;
+    const url = "http://localhost:8080/Movies" + Movie.name;
     const fetchOptions = {
         method: "PUT",
         headers: {
