@@ -2,6 +2,7 @@ console.log("Vi er i CreateTable")
 
 const pbCreateTable = document.getElementById("pbCreateTable")
 const TblMovies = document.getElementById("TblMovies")
+const pbUpdate = document.getElementById("pbUpdate")
 
 function createTable(Movie) {
     console.log(Movie.name)
@@ -21,15 +22,13 @@ function createTable(Movie) {
     atag.innerText = Movie.name
     cell.appendChild(atag)
 
-/*
+
     cell = row.insertCell(cellCount++)
-    cell.innerHTML = Movie.region.navn
-*/
-    cell = row.insertCell(cellCount++)
-    let inpHrefPhoto = document.createElement("input")
-    inpHrefPhoto.type = "text"
-    inpHrefPhoto.setAttribute("value", Movie.photo)
+    let inpHrefPhoto = document.createElement("Enum")
+    inpHrefPhoto.type = "Enum"
+    inpHrefPhoto.setAttribute("value", Movie.categories)
     cell.appendChild(inpHrefPhoto)
+
 
     cell = row.insertCell(cellCount++)
     let img = document.createElement("img")
@@ -39,15 +38,18 @@ function createTable(Movie) {
     img.setAttribute("height", 150)
     cell.appendChild(img)
 
-    //Update knap, sender Movie til PUT
+    //Edit knap, sender Movie til PUT
     cell = row.insertCell(cellCount++)
     let pbUpdate = document.createElement("button")
     pbUpdate.textContent = "Edit"
-    pbUpdate.name = "buttonupdate"
+    pbUpdate.Classname = "buttonEdit"
     pbUpdate.addEventListener('click', function () {
         Movie.photo = inpHrefPhoto.value;
-        updateMovie(Movie)
+        Editmovie(Movie)
     })
+
+
+
     cell.appendChild(pbUpdate)
 
     //Delete knap, sender Movie til DELETE
@@ -65,18 +67,18 @@ function createTable(Movie) {
 }
 
 async function deleteMovie(Movie) {
-    console.log("slet movie" + Movie.name)
+    console.log("delete movie" + Movie.name)
 }
 
-async function updateMovie(Movie) {
-    console.log(Movie.photo)
+async function Editmovie(Movie) {
+    console.log(Movie.name)
     console.log(Movie)
-    const response = await restUpdateMovie(Movie)
+    const response = await restEditMovie(Movie)
     console.log(response)
 }
 
-async function restUpdateMovie(Movie) {
-    const url = "http://localhost:8080/Movies" + Movie.name;
+async function restEditMovie(Movie) {
+    const url = "moviecreation.html" + Movie.name;
     const fetchOptions = {
         method: "PUT",
         headers: {
@@ -90,7 +92,7 @@ async function restUpdateMovie(Movie) {
     const response = await fetch(url, fetchOptions);
     console.log(response);
     if (!response.ok) {
-        console.log("Det gik ikke godt med update");
+        console.log("Det gik ikke godt med edit");
     };
     return response;
 }
@@ -98,7 +100,16 @@ async function restUpdateMovie(Movie) {
 
 
 function actionCreateTable() {
-    lstmovies.forEach(createTable)
+   // lstmovies.forEach(createTable)
+    console.log("vi er i linje 101")
+    console.log(ddMovies)
+    const ix = ddMovies.selectedIndex
+    const opt = ddMovies[ix].movie
+    console.log(opt)
+    createTable(opt)
+
+
+
 }
 
 pbCreateTable.addEventListener('click', actionCreateTable)

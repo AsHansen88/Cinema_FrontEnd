@@ -7,11 +7,9 @@ let formMovie;
 
 function createShowtimeFormEventListener(){
     formMovie = document.getElementById("formMovie");
-    //formMovie.addEventListener("submit", handleFormSubmit);
+    formMovie.addEventListener("submit", handleFormSubmit);
 
 }
-
-
 
 async function handleFormSubmit(event) {
     //Vi handler submit her, i stedet for default html behaviour
