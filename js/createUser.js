@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', createUserFormEventListener);
 
 let formUserCreation;
 
+
 function createUserFormEventListener() {
     console.log("hej 25")
     formUserCreation = document.getElementById("formUserCreation");
@@ -62,5 +63,5 @@ async function postFormData(createUserUrl, createUserForm) {
         throw new Error(errorMessage)
     }
     // TODO for this Userlogin post, the usual "return response.json()" is probably not needed?
-    return responseCreateUser.json();
+    return responseCreateUser;
 }

@@ -46,7 +46,7 @@ async function postFormData(url, formData) {
     console.log(ddIndex);
     const selectedMovie = ddMovies[ddIndex];
     console.log(selectedMovie);
-    plainFormData.movieId = selectedMovie.movie; //THIS MIGHT MAKE IT WORK IF MESSING WITH FETCHMOVIES DONT WORK
+    plainFormData.movie = selectedMovie.movie; //THIS MIGHT MAKE IT WORK IF MESSING WITH FETCHMOVIES DONT WORK
     console.log(plainFormData);
     const formDataJsonString = JSON.stringify(plainFormData)
     const fetchOptions = {

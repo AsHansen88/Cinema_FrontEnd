@@ -12,6 +12,7 @@ function createFormEventListener() {
     formUser.addEventListener("submit", handleUserLoginFormSubmit);
 }
 
+
 async function handleUserLoginFormSubmit(event) {
     //Vi handler submit her, i stedet for default html behaviour
     event.preventDefault();
