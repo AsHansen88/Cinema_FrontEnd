@@ -11,8 +11,6 @@ function createShowtimeFormEventListener(){
 
 }
 
-
-
 async function handleFormSubmit(event) {
     //Vi handler submit her, i stedet for default html behaviour
     event.preventDefault();
