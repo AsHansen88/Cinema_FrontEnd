@@ -1,0 +1,51 @@
+.postFormContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+body {
+    background-color: #daefff;
+}
+
+#formShowtime {
+    display: flex;
+    justify-content: left;
+
+    flex-direction: column;
+    min-width: 250px;
+}
+
+#formShowtime select {
+    margin-bottom: 20px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+#formShowtime input {
+    margin-bottom: 20px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: #fafafa;
+}
+
+#formShowtime label {
+    margin-bottom: 2px;
+}
+
+button {
+    background-color: #0081cb;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border: 2px #0081cb outset;
+}
+
+h1 {
+    font-family: "Roboto", sans-serif;
+}

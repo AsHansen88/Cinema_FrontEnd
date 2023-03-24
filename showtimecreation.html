@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Showtime creation site</title>
+    <link rel="stylesheet" href="css/showtimecreation.css">
 </head>
 <body>
-  <h1>Showtime creation</h1>
-  <br>
+
   <div class="postFormContainer">
-      <!-- Hibernate: insert into showtime (movie_id, movie_theater_id, timeslot, showtime_id) values (?, ?, ?, ?) -->
+      <h1>Showtime Creation</h1>
+      <br>
+
     <form id="formShowtime" method="post" action="http://localhost:8080/postShowtime">
         <label for="ddMovies"><bold>Select Movie:</bold></label>
         <select id="ddMovies" name="movieId"></select>
@@ -21,9 +23,6 @@
 
         <label for="inpTimeslot"><bold>Create Timeslot</bold></label>
         <input type="datetime-local" id="inpTimeslot" name="timeslot">
-
-
-
 
         <button type="submit">Create Timeslot</button>
     </form>
