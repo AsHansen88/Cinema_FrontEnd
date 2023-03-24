@@ -7,7 +7,7 @@ let formMovie;
 
 function createShowtimeFormEventListener(){
     formMovie = document.getElementById("formMovie");
-    //formMovie.addEventListener("submit", handleFormSubmit);
+    formMovie.addEventListener("submit", handleFormSubmit);
 
 }
 

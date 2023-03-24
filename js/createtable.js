@@ -21,10 +21,10 @@ function createTable(Movie) {
     atag.innerText = Movie.name
     cell.appendChild(atag)
 
-/*
+
     cell = row.insertCell(cellCount++)
-    cell.innerHTML = Movie.region.navn
-*/
+    cell.innerHTML = Movie.length.name
+
     cell = row.insertCell(cellCount++)
     let inpHrefPhoto = document.createElement("input")
     inpHrefPhoto.type = "text"
@@ -43,7 +43,7 @@ function createTable(Movie) {
     cell = row.insertCell(cellCount++)
     let pbUpdate = document.createElement("button")
     pbUpdate.textContent = "Edit"
-    pbUpdate.name = "buttonupdate"
+    pbUpdate.Classname = "buttonEdit"
     pbUpdate.addEventListener('click', function () {
         Movie.photo = inpHrefPhoto.value;
         updateMovie(Movie)
@@ -76,7 +76,7 @@ async function updateMovie(Movie) {
 }
 
 async function restUpdateMovie(Movie) {
-    const url = "http://localhost:8080/Movies" + Movie.name;
+    const url = "http://localhost:8080/movies/" + Movie.name;
     const fetchOptions = {
         method: "PUT",
         headers: {
@@ -98,7 +98,16 @@ async function restUpdateMovie(Movie) {
 
 
 function actionCreateTable() {
-    lstmovies.forEach(createTable)
+   // lstmovies.forEach(createTable)
+    console.log("vi er i linje 101")
+    console.log(ddMovies)
+    const ix = ddMovies.selectedIndex
+    const opt = ddMovies[ix].movie
+    console.log(opt)
+    createTable(opt)
+
+
+
 }
 
 pbCreateTable.addEventListener('click', actionCreateTable)
